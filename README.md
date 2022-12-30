@@ -4,6 +4,10 @@ Test task
 
 - `npm i --no-save` - install dependencies
 - `npm run build` - production build
+- `npm run lint` - code linting
+- `npm run lint:fix` - auto fix-up
+- `npm run test` - code testing
+- `npm run test:coverage` - test coverage
 
 <h3>About testing with Jest-Enzyme:</h3>
 <p>
