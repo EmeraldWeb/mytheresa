@@ -12,7 +12,7 @@
     "url": "https://github.com/EmeraldWeb/mytheresa/issues"
   },
   "homepage": "https://github.com/EmeraldWeb/mytheresa#readme",
-  "main": "src/index.js",
+  "main": "src/index.jsx",
   "browserslist": [
     "since 2019 and not dead"
   ],
@@ -20,6 +20,9 @@
     "dev": "webpack --mode=development --progress --color",
     "dev:watch": "webpack --mode=development --progress --color --watch",
     "build": "webpack --mode=production",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "lint": "npm run lint:jsx && npm run lint:scss",
     "lint:fix": "npm run lint:jsx:fix && npm run lint:scss:fix",
     "lint:jsx": "eslint src",
@@ -47,14 +50,18 @@
     "webpack-cli": "^5.0.1"
   },
   "devDependencies": {
+    "@cfaester/enzyme-adapter-react-18": "^0.6.0",
     "enzyme": "^3.11.0",
     "eslint": "^8.30.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.31.11",
     "jest": "^29.3.1",
+    "jest-environment-enzyme": "^7.1.2",
     "jest-environment-jsdom": "^29.3.1",
+    "jest-enzyme": "^7.1.2",
     "stylelint": "^14.16.1",
     "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-scss": "^4.3.0"
+    "stylelint-scss": "^4.3.0",
+    "util": "^0.12.5"
   }
 }
