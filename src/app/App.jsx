@@ -1,18 +1,28 @@
 import React, { useEffect } from 'react';
-import { getPopular, getTopRated, getUpcoming, getMovie } from '../services/api-tmdb';
+import { usePopularStore, useMovieStore, useTopRatedStore, useUpcomingStore } from '../data/state/tmdb';
 
 export function App() {
-    useEffect( () => {
-        async function fetchCategories() { // TODO: place in route with state manager
-            const popular = await getPopular();
-            const topRated = await getTopRated();
-            const upcoming = await getUpcoming();
-            const movie = await getMovie(238);
+    const popular = usePopularStore((state) => state.popular);
+    const movie = useMovieStore((state) => state.movie);
+    const topRated = useTopRatedStore((state) => state.topRated);
+    const upcoming = useUpcomingStore((state) => state.upcoming);
 
-            console.log('popular - ', popular);
-            console.log('topRated - ', topRated);
-            console.log('upcoming - ', upcoming);
-            console.log('movie - ', movie);
+    console.log('POPULAR', popular);
+    console.log('MOVIE', movie);
+    console.log('TOPRATED', topRated);
+    console.log('UPCOMING', upcoming);
+
+    const fetchPopular = usePopularStore((state) => state.fetch);
+    const fetchMovie = useMovieStore((state) => state.fetch);
+    const fetchTopRated = useTopRatedStore((state) => state.fetch);
+    const fetchUpcoming = useUpcomingStore((state) => state.fetch);
+
+    useEffect( () => {
+        function fetchCategories() { // TODO: place in route with state manager
+            fetchPopular();
+            fetchMovie(238);
+            fetchTopRated();
+            fetchUpcoming();
         }
 
         fetchCategories();
