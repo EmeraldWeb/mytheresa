@@ -30,6 +30,7 @@
             "imports": "always-multiline",
             "exports": "always-multiline",
             "functions": "never"
-        }]
+        }],
+        "max-len": ["error", { "code": 120 }]
     }
 }
