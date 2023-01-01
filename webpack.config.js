@@ -1,4 +1,8 @@
+const webpack = require('webpack');
 const path = require('path');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = {
     entry: './src/index.jsx',
@@ -33,4 +37,9 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.css', '.scss', '.sass'],
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            __API__: process.env.API_KEY_TMDB,
+        })
+    ]
 };
