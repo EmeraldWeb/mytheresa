@@ -9,6 +9,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -41,5 +42,14 @@ module.exports = {
         new webpack.DefinePlugin({
             __API__: process.env.API_KEY_TMDB,
         })
-    ]
+    ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'build'),
+        },
+        open: true,
+        compress: true,
+        port: 9000,
+        historyApiFallback: true,
+    },
 };

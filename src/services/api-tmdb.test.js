@@ -1,6 +1,8 @@
 import { stringify } from 'qs';
 import { queries, getPopular, getTopRated, getUpcoming, getMovie } from './api-tmdb';
-import { tmdb } from '../data/url.json';
+import url from '../data/url.json';
+
+const urlAPI = url.tmdb.api;
 
 describe('API TMDB', () => {
     const queryParams = stringify(queries);
@@ -10,7 +12,7 @@ describe('API TMDB', () => {
     });
 
     test('getPopular', async () => {
-        const url = `${tmdb.api}/movie/popular`;
+        const url = `${urlAPI}/movie/popular`;
         fetch.mockResponse(JSON.stringify({}));
         await getPopular();
 
@@ -20,7 +22,7 @@ describe('API TMDB', () => {
     });
 
     test('getTopRated', async () => {
-        const url = `${tmdb.api}/movie/top_rated`;
+        const url = `${urlAPI}/movie/top_rated`;
         fetch.mockResponse(JSON.stringify({}));
         await getTopRated();
 
@@ -30,7 +32,7 @@ describe('API TMDB', () => {
     });
 
     test('getUpcoming', async () => {
-        const url = `${tmdb.api}/movie/upcoming`;
+        const url = `${urlAPI}/movie/upcoming`;
         fetch.mockResponse(JSON.stringify({}));
         await getUpcoming();
 
@@ -41,7 +43,7 @@ describe('API TMDB', () => {
 
     test('getMovie', async () => {
         const id = `id-${Math.random()}`;
-        const url = `${tmdb.api}/movie/${id}`;
+        const url = `${urlAPI}/movie/${id}`;
         fetch.mockResponse(JSON.stringify({}));
         await getMovie(id);
 

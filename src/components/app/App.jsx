@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { usePopularStore, useMovieStore, useTopRatedStore, useUpcomingStore } from '../data/state/tmdb';
+import { usePopularStore, useMovieStore, useTopRatedStore, useUpcomingStore } from '../../data/state/tmdb';
 
 export function App() {
     const popular = usePopularStore((state) => state.popular);

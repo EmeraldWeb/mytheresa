@@ -1,9 +1,9 @@
 import { get } from './api';
-import { tmdb } from '../data/url.json';
+import url from '../data/url.json';
 import { tmdbAPIKey } from '../data/const';
 
 const keyAPI = tmdbAPIKey;
-const mainUrl = tmdb.api;
+const mainUrl = url.tmdb.api;
 
 export const queries = {
     'api_key': keyAPI,
