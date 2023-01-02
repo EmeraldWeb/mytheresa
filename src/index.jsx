@@ -1,4 +1,4 @@
-import React, { StrictMode } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Router } from './routes';
 import './index.html';
@@ -8,9 +8,9 @@ const root = document.getElementById('root');
 
 if (root) {
     createRoot(root).render(
-        <StrictMode>
+        <React.StrictMode>
             <Router />
-        </StrictMode>
+        </React.StrictMode>
     );
 } else {
     console.error('App container not found.');

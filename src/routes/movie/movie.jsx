@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import { getMovie } from '../services/api-tmdb';
-import { useMovieStore } from '../data/state/tmdb';
-import { Layout, Cell } from '../components/layout';
-
-export async function movieLoader({ params }) {
-    const movie = await getMovie(params.movieId);
-    return { movie };
-}
+import { useMovieStore } from '../../data/state/tmdb';
+import { Layout, Cell } from '../../components/layout';
+import { useQuery } from '../../hooks/useQuery';
 
 export function Movie() {
     const { movie } = useLoaderData();
+    const { category } = useQuery();
+
     const setMovie = useMovieStore((state) => state.setMovie);
     setMovie?.(movie);
     console.log('movie', movie);
+    console.log('category', category);
 
     if (!movie) {
         return (

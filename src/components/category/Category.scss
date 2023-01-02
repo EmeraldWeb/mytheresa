@@ -1,0 +1,12 @@
+@use '../../styles/variables/common';
+
+.category {
+    .category-header {
+        margin-bottom: common.$gap-big;
+    }
+}
+
+.category-header {
+    font-size: 30px;
+    font-weight: 500;
+}

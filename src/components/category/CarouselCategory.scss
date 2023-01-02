@@ -1,0 +1,17 @@
+@use '../../styles/variables/common';
+
+.carouselCategory-link {
+    position: relative;
+    outline: none;
+}
+
+.carouselCategory-voteAverage {
+    position: absolute;
+    right: common.$gap;
+    bottom: common.$gap;
+    z-index: 1;
+    font-size: 32px;
+    font-style: italic;
+    text-shadow: 2px 2px #000;
+    color: #fff;
+}
