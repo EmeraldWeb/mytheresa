@@ -1,5 +1,8 @@
+@use './variables/theme';
+
 body {
-    background-color: bisque;
+    background-color: var(--back-color);
+    color: var(--text-color);
 }
 
 :fullscreen [data-check='autoprefixer'] {

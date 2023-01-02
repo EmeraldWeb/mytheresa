@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { usePopularStore, useUpcomingStore, useTopRatedStore } from '../data/state/tmdb';
 import { getPopular, getTopRated, getUpcoming } from '../services/api-tmdb';
+import { Layout, Cell } from '../components/layout';
 
 export async function homeLoader() {
     const responses = await Promise.all([
@@ -29,9 +30,14 @@ export function Home() {
     setTopRated?.(topRated);
 
     return (
-        <div>
-            Home
-            <Link to={`movie/132`}>Your Name</Link>
-        </div>
+        <Layout
+            headerContent={<h1>{'Hello!'}</h1>}
+        >
+            <Cell>
+                Home
+                <br />
+                <Link to={`movie/132`}>Movie 132</Link>
+            </Cell>
+        </Layout>
     );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { getMovie } from '../services/api-tmdb';
 import { useMovieStore } from '../data/state/tmdb';
+import { Layout, Cell } from '../components/layout';
 
 export async function movieLoader({ params }) {
     const movie = await getMovie(params.movieId);
@@ -16,19 +17,24 @@ export function Movie() {
 
     if (!movie) {
         return (
-            <>
-                <div>{'Sorry, there isn\'t such movie'}</div>
-                <Link to={`/`}>Home</Link>
-            </>
+            <Layout
+                headerContent={<h1>{'Sorry, there isn\'t such movie'}</h1>}
+            >
+                <Cell>
+                    <Link to={`/`}>Home</Link>
+                </Cell>
+            </Layout>
         );
     }
 
     return (
-        <>
-            <div>
+        <Layout
+            headerContent={<h1>{'Movie!'}</h1>}
+        >
+            <Cell>
                 Movie
                 <Link to={`/`}>Home</Link>
-            </div>
-        </>
+            </Cell>
+        </Layout>
     );
 }

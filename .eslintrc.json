@@ -31,6 +31,7 @@
             "exports": "always-multiline",
             "functions": "never"
         }],
-        "max-len": ["error", { "code": 120 }]
+        "max-len": ["error", { "code": 120 }],
+        "react/prop-types": 0
     }
 }
