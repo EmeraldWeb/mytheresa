@@ -1,3 +1,7 @@
 body {
     background-color: bisque;
 }
+
+:fullscreen [data-check='autoprefixer'] {
+    color: #000;
+}
