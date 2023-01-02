@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const dotenv = require('dotenv');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 dotenv.config();
 
@@ -21,9 +22,10 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader'
+                    'postcss-loader',
+                    'sass-loader',
                 ],
             },
             {
@@ -41,7 +43,8 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             __API__: process.env.API_KEY_TMDB,
-        })
+        }),
+        new MiniCssExtractPlugin(),
     ],
     devServer: {
         static: {

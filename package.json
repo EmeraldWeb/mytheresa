@@ -14,11 +14,12 @@
   "homepage": "https://github.com/EmeraldWeb/mytheresa#readme",
   "main": "src/index.jsx",
   "browserslist": [
-    "since 2019 and not dead"
+    "defaults"
   ],
   "scripts": {
     "dev": "webpack serve --mode=development --no-client-overlay-warnings",
     "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development",
     "serve": "webpack serve --mode=production --no-client-overlay-warnings",
     "prod": "npm run build && npm run serve",
     "test": "jest",
@@ -40,7 +41,11 @@
     "css-loader": "^6.7.3",
     "dotenv": "^16.0.3",
     "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.7.2",
     "node-sass": "^8.0.0",
+    "postcss": "^8.4.20",
+    "postcss-loader": "^7.0.2",
+    "postcss-preset-env": "^7.8.3",
     "qs": "^6.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
