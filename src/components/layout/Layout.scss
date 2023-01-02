@@ -1,0 +1,50 @@
+@use '../../styles/variables/common';
+@use '../../styles/variables/device-size';
+
+$gap-layout: 32px;
+
+.layout {
+    $mobile-gap: common.$gap-layout / 2;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: #{$mobile-gap * 1.5} $mobile-gap;
+    min-height: 100vh;
+    max-width: device-size.$device-width-desktop-l;
+    width: 100%;
+    background-color: var(--main-color);
+
+    .layout-header {
+        margin-bottom: #{common.$gap-layout * 2};
+    }
+}
+
+.layout-main {
+    .layout-cell {
+        margin-bottom: common.$gap-layout;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.layout-header,
+.layout-cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: common.$gap;
+    background-color: var(--back-color);
+}
+
+.layout-header {
+    height: #{common.$gap-layout * 2};
+    width: 100%;
+}
+
+@media (min-width: device-size.$device-width-mobile-l) {
+    .layout {
+        padding: #{common.$gap-layout * 1.5} common.$gap-layout;
+    }
+}
