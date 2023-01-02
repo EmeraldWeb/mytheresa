@@ -28,7 +28,6 @@ $gap-layout: 32px;
     }
 }
 
-.layout-header,
 .layout-cell {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -36,11 +35,6 @@ $gap-layout: 32px;
     border-radius: 3px;
     padding: common.$gap;
     background-color: var(--back-color);
-}
-
-.layout-header {
-    height: #{common.$gap-layout * 2};
-    width: 100%;
 }
 
 @media (min-width: device-size.$device-width-mobile-l) {
