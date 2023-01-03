@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { usePopularStore, useUpcomingStore, useTopRatedStore } from '../../data/state/tmdb';
-import { useTheme } from '../../data/state/theme';
+import { usePopularStore, useUpcomingStore, useTopRatedStore } from '../../data/store/tmdb';
+import { useThemeStore } from '../../data/store/theme';
 import { Layout, Cell } from '../../components/layout';
 import { Category } from '../../components/category';
 import './home.scss';
 
 export function Home() {
     const { popular, upcoming, topRated } = useLoaderData();
-    const setTheme = useTheme((state) => state.setTheme);
+    const setTheme = useThemeStore((state) => state.setTheme);
 
     useEffect(() => {
         setTheme?.('main');

@@ -5,7 +5,7 @@ const selector = ':root';
 const propertyKey = '--theme-key';
 const themeList = Object.keys(themes);
 
-export const useTheme = create((set) => ({
+export const useThemeStore = create((set) => ({
     list: themeList,
     theme: 'main',
     setTheme: (newTheme) => {
