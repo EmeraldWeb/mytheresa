@@ -15,13 +15,15 @@ each category has a unique theme presented on the movie page that belongs to tha
 4. `npm run prod` - build bundle and serve webpackDevServer, which open a page `localhost:9000` in your default browser
 
 <h3>Other commands you may find useful</h3>
-<span>(Full list in package.json "scripts")</span>
+(Full list in package.json "scripts")
+
 * `npm run build` only production build
 * `npm run lint` code linting
 * `npm run test` code testing
 * `npm run test:coverage` test coverage
 
 <h3>Tech stack:</h3>
+
 * `Webpack` for bundling
 * `React` for building UI
 * `React Router` for SPA navigation
