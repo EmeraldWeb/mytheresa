@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Carousel } from '../carousel/Carousel';
+import { Carousel } from '../carousel';
 import { Image } from '../image';
+import { useWishListStore } from '../../data/store/tmdb/wishList';
 import url from '../../data/url.json';
 import './CarouselCategory.scss';
 
@@ -35,14 +36,18 @@ const responsive = {
 };
 
 export function CarouselCategory({ list, category }) {
+    const wishList = useWishListStore((state) => state.wishList);
+
     function renderList(listOfmovies, movieCategory) {
         const listOfLinks = listOfmovies.map((movie, index) => {
             const src = `${url.tmdb.image}/w200${movie.poster_path}`; // TODO: replace on function
             const srcSet = `${src} 1x, ${url.tmdb.image}/w400${movie.poster_path} 2x`;
 
+            const isWished = wishList.includes(Number(movie.id));
+
             return (
                 <Link
-                    className={'carouselCategory-link'}
+                    className={`carouselCategory-link`}
                     key={`${index}-${movie.id}`}
                     to={`movie/${movie.id}?category=${movieCategory}`}
                     title={movie.title}
@@ -57,6 +62,8 @@ export function CarouselCategory({ list, category }) {
                     <span className={'carouselCategory-voteAverage'}>
                         {movie.vote_average}
                     </span>
+
+                    <span className={`carouselCategory-wish ${isWished ? 'carouselCategory-wish__wished' : ''}`}></span>
                 </Link>
             );
         });

@@ -2,32 +2,37 @@
 @use '../../styles/variables/device-size';
 @use '../home/home';
 
-.movie-title {
-    color: var(--text-color);
-    font-weight: 700;
-    text-decoration: var(--sub-color) wavy underline;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-        color: var(--sub-color);
-    }
-}
-
 .movie-block {
     margin-bottom: common.$gap-layout;
 }
 
 .movie-image {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
     background-color: #7f7f7f;
 
+    &:after {
+        content: common.$emoji-heart;
+        font-size: 40px;
+        position: absolute;
+        top: common.$gap-big;
+        right: common.$gap-big;
+        opacity: 0;
+        transition: 0.3s opacity;
+    }
+
     img {
         border-radius: 8px;
         max-width: 100%;
+    }
+
+    &__wished {
+        &:after {
+            opacity: 1;
+        }
     }
 }
 
@@ -39,7 +44,7 @@
     }
 }
 
-.movie-description-button {
+.movie-wish-button {
     margin-bottom: common.$gap-big;
 }
 

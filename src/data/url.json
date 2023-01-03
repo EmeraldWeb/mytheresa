@@ -3,5 +3,9 @@
         "domain": "https://www.themoviedb.org",
         "api": "https://api.themoviedb.org/3",
         "image": "https://image.tmdb.org/t/p"
+    },
+    "google": {
+        "domain": "https://www.google.com",
+        "searchQuery": "https://www.google.com/search?q="
     }
 }

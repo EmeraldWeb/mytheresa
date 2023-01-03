@@ -2,6 +2,7 @@
 @use '../../styles/variables/device-size';
 
 .carouselCategory-link {
+    display: flex;
     position: relative;
     outline: none;
     cursor: pointer;
@@ -13,7 +14,7 @@
 
 .carouselCategory-voteAverage {
     position: absolute;
-    right: common.$gap;
+    left: common.$gap;
     bottom: common.$gap;
     z-index: 1;
     font-size: 32px;
@@ -21,6 +22,22 @@
     text-shadow: 2px 2px #000;
     color: #fff;
     backface-visibility: hidden;
+}
+
+.carouselCategory-wish {
+    font-size: 30px;
+    position: absolute;
+    top: common.$gap;
+    left: common.$gap;
+    opacity: 0;
+
+    &:after {
+        content: common.$emoji-heart;
+    }
+
+    &__wished {
+        opacity: 1;
+    }
 }
 
 @media (min-width: device-size.$device-width-laptop) {

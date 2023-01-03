@@ -1,0 +1,10 @@
+@use '../../styles/variables/common';
+
+.buttonWish {
+    &__wished {
+        &:before,
+        &:after {
+            content: common.$emoji-heart;
+        }
+    }
+}
