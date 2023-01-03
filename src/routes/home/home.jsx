@@ -1,39 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { usePopularStore, useUpcomingStore, useTopRatedStore } from '../../data/state/tmdb';
+import { useTheme } from '../../data/state/theme';
 import { Layout, Cell } from '../../components/layout';
 import { Category } from '../../components/category';
+import './home.scss';
 
 export function Home() {
     const { popular, upcoming, topRated } = useLoaderData();
+    const setTheme = useTheme((state) => state.setTheme);
 
-    // TODO: bugreport to Zustand - setFunction become undefined
+    useEffect(() => {
+        setTheme?.('main');
+    }, []);
+
+    // example and for future purposes
     const setPopular = usePopularStore((state) => state.setPopular);
-    setPopular?.(popular);
+    setPopular(popular);
     const setUpcoming = useUpcomingStore((state) => state.setUpcoming);
-    setUpcoming?.(upcoming);
+    setUpcoming(upcoming);
     const setTopRated = useTopRatedStore((state) => state.setTopRated);
-    setTopRated?.(topRated);
+    setTopRated(topRated);
 
     return (
         <Layout
             headerContent={'Only the BEST categories from the TMDB!'}
         >
-            <Cell>
+            <Cell className={'home-category'}>
                 <Category
                     title={'Popular'}
                     category={'popular'}
                     list={popular}
                 />
             </Cell>
-            <Cell>
+            <Cell className={'home-category'}>
                 <Category
                     title={'Top Rated'}
                     category={'topRated'}
                     list={topRated}
                 />
             </Cell>
-            <Cell>
+            <Cell className={'home-category'}>
                 <Category
                     title={'Upcoming'}
                     category={'upcoming'}

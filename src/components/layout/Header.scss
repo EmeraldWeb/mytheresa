@@ -7,6 +7,8 @@
     flex-direction: column;
     min-height: #{common.$gap-layout * 2};
     width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
     .layout-logo {
         margin-bottom: common.$gap-big;
@@ -15,10 +17,19 @@
 
 .layout-logo {
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+        .layout-logo-img {
+            filter: drop-shadow(0 0 0);
+        }
+    }
 }
 
 .layout-logo-img {
     width: 200px;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.8));
+    transition: 0.3s filter;
 }
 
 .layout-headline {
@@ -30,6 +41,7 @@
     .layout-header {
         flex-direction: row;
         height: #{common.$gap-layout * 2};
+        white-space: nowrap;
 
         .layout-logo {
             margin-right: common.$gap-big;

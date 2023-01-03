@@ -1,0 +1,73 @@
+@use '../../styles/variables/common';
+@use '../../styles/variables/device-size';
+@use '../home/home';
+
+.movie-title {
+    color: var(--text-color);
+    font-weight: 700;
+    text-decoration: var(--sub-color) wavy underline;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: var(--sub-color);
+    }
+}
+
+.movie-block {
+    margin-bottom: common.$gap-layout;
+}
+
+.movie-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: #7f7f7f;
+
+    img {
+        border-radius: 8px;
+        max-width: 100%;
+    }
+}
+
+.movie-description {
+    overflow-y: auto;
+
+    .infoList-item-text {
+        display: block;
+    }
+}
+
+.movie-description-button {
+    margin-bottom: common.$gap-big;
+}
+
+.movie-info {
+    overflow-y: auto;
+    height: home.$home-category-height;
+}
+
+.movie-description-headline,
+.movie-info-headline {
+    margin-bottom: common.$gap-big;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+@media (min-width: device-size.$device-width-tablet) {
+    .movie-block {
+        display: flex;
+        justify-content: space-between;
+        height: #{home.$home-category-height * 2 + common.$gap-layout};
+
+        .movie-image {
+            margin-right: common.$gap-layout;
+            margin-bottom: 0;
+        }
+    }
+
+    .movie-description {
+        width: 30%;
+    }
+}

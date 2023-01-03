@@ -1,0 +1,39 @@
+@use '../../styles/variables/common';
+
+.button {
+    box-sizing: border-box;
+    height: 60px;
+    width: 160px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: common.$gap;
+    font-size: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: #fff;
+    transition: 0.3s opacity;
+
+    &.button__small {
+        height: 40px;
+        width: 100px;
+        padding: #{common.$gap / 2};
+        font-size: 12px;
+    }
+
+    &.button__big {
+        height: 100px;
+        width: 300px;
+        padding: common.$gap-big;
+        font-size: 48px;
+    }
+
+    &:hover,
+    &:focus {
+        opacity: 0.8;
+    }
+}

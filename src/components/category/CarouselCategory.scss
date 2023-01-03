@@ -1,8 +1,14 @@
 @use '../../styles/variables/common';
+@use '../../styles/variables/device-size';
 
 .carouselCategory-link {
     position: relative;
     outline: none;
+    cursor: pointer;
+}
+
+.carouselCategory-image {
+    border-radius: 8px;
 }
 
 .carouselCategory-voteAverage {
@@ -14,4 +20,30 @@
     font-style: italic;
     text-shadow: 2px 2px #000;
     color: #fff;
+    backface-visibility: hidden;
+}
+
+@media (min-width: device-size.$device-width-laptop) {
+    $translate: #{common.$gap / 2};
+    .carouselCategory {
+        .react-multi-carousel-item {
+            box-sizing: border-box;
+            padding: $translate;
+        }
+    }
+
+    .carouselCategory-link {
+        &:hover,
+        &:focus {
+            .carouselCategory-image {
+                filter: drop-shadow($translate $translate 2px rgba(0, 0, 0, 0.8));
+                transform: translate(-#{$translate}, -#{$translate});
+            }
+        }
+    }
+
+    .carouselCategory-image {
+        filter: drop-shadow(0 0 0);
+        transition: 0.2s all;
+    }
 }
