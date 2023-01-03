@@ -1,0 +1,42 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.buttonTheme {
+    $translate: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-color);
+    border-color: var(--sub-color);
+    box-shadow:
+            $translate $translate 0 var(--main-color),
+            #{$translate + 1px} #{$translate + 1px} 0 var(--main-color);
+
+    &::before,
+    &::after {
+        content: var(--theme-symbol);
+        animation-name: rotate;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    &:active {
+        box-shadow: 0 0 0 var(--main-color);
+        transform: translate($translate, $translate);
+    }
+
+    &:hover,
+    &:focus {
+        &::before,
+        &::after {
+            animation-play-state: paused;
+        }
+    }
+}

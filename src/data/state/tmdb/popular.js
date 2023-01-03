@@ -4,12 +4,12 @@ import { getPopular } from '../../../services/api-tmdb';
 export const usePopularStore = create((set) => ({
     popular: [],
     setPopular: (popular) => {
-        set({ popular }, true);
+        set({ popular });
     },
     fetch: async () => {
         const popular = await getPopular();
         if (popular) {
-            set({ popular }, true);
+            set({ popular });
         }
     },
 }));

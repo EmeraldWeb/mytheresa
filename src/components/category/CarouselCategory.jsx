@@ -37,6 +37,9 @@ const responsive = {
 export function CarouselCategory({ list, category }) {
     function renderList(listOfmovies, movieCategory) {
         const listOfLinks = listOfmovies.map((movie, index) => {
+            const src = `${url.tmdb.image}/w200${movie.poster_path}`; // TODO: replace on function
+            const srcSet = `${src} 1x, ${url.tmdb.image}/w400${movie.poster_path} 2x`;
+
             return (
                 <Link
                     className={'carouselCategory-link'}
@@ -46,7 +49,8 @@ export function CarouselCategory({ list, category }) {
                 >
                     <Image
                         className={'carouselCategory-image'}
-                        src={`${url.tmdb.image}/w200/${movie.poster_path}`}
+                        src={src}
+                        srcSet={srcSet}
                         alt={`${movie.title} poster`}
                     />
 

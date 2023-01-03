@@ -5,6 +5,7 @@ $gap-layout: 32px;
 
 .layout {
     $mobile-gap: common.$gap-layout / 2;
+
     margin: 0 auto;
     box-sizing: border-box;
     padding: #{$mobile-gap * 1.5} $mobile-gap;
@@ -12,6 +13,8 @@ $gap-layout: 32px;
     max-width: device-size.$device-width-desktop-l;
     width: 100%;
     background-color: var(--main-color);
+    background-image: var(--back-image);
+    background-attachment: fixed;
 
     .layout-header {
         margin-bottom: #{common.$gap-layout * 2};
@@ -33,6 +36,7 @@ $gap-layout: 32px;
     text-overflow: ellipsis;
     box-sizing: border-box;
     border-radius: 3px;
+    border: 1px solid var(--sub-color);
     padding: common.$gap;
     background-color: var(--back-color);
 }

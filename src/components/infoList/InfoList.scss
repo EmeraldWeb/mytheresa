@@ -1,0 +1,32 @@
+@use '../../styles/variables/common';
+
+.infoList {
+    width: 100%;
+    list-style-type: circle;
+
+    > .infoList-item {
+        margin-bottom: common.$gap-big;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.infoList-item {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 24px;
+
+    &::before {
+        content: var(--theme-symbol);
+        margin-right: common.$gap;
+    }
+}
+
+.infoList-item-title {
+    font-weight: 700;
+    font-style: italic;
+    margin-right: common.$gap;
+}
