@@ -35,7 +35,7 @@ each category has a unique theme presented on the movie page that belongs to tha
 
 <h3>About tech stack</h3>
 
-<h4>Testing with Jest-Enzyme:</h4>
+<h4>Testing with Jest-Enzyme</h4>
 <p>
     In this task Jest-Enzyme tech stack was implemented for testing, 
     because I know what in Mytheresa you're prefer Enzyme. <br>
