@@ -2,5 +2,8 @@
     "setupFilesAfterEnv": ["jest-enzyme", "<rootDir>/jest.setup.js"],
     "bail": true,
     "verbose": true,
-    "testEnvironment": "jest-environment-jsdom"
+    "testEnvironment": "jest-environment-jsdom",
+    "moduleNameMapper": {
+        "\\.(sass|scss|css|less|svg)$": "identity-obj-proxy"
+    }
 }

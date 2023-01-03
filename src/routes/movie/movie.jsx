@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import { useMovieStore } from '../../data/state/tmdb';
-import { useTheme } from '../../data/state/theme';
+import { useMovieStore } from '../../data/store/tmdb';
+import { useThemeStore } from '../../data/store/theme';
 import { Layout, Cell } from '../../components/layout';
 import { useQuery } from '../../hooks';
 import { Image } from '../../components/image';
@@ -13,8 +13,8 @@ import './movie.scss';
 export function Movie() {
     const { movie } = useLoaderData();
     const { category } = useQuery();
-    const currentTheme = useTheme((state) => state.theme);
-    const setTheme = useTheme((state) => state.setTheme);
+    const currentTheme = useThemeStore((state) => state.theme);
+    const setTheme = useThemeStore((state) => state.setTheme);
 
     const setMovie = useMovieStore((state) => state.setMovie);
     setMovie(movie);

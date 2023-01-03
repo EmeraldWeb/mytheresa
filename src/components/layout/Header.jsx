@@ -4,7 +4,7 @@ import './Header.scss';
 import url from '../../data/url.json';
 import '../../public/tmdb_blue_short.svg';
 
-export function Header({ children, className }) {
+export function Header({ children, className = '' }) {
     return (
         <header className={`layout-header ${className}`}>
             <a

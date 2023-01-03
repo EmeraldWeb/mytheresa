@@ -1,10 +1,10 @@
 import React from 'react';
 import './Button.scss';
 
-export function Button({ children, className, onClick, size, ...otherProps }) {
+export function Button({ children, className = '', onClick, size, ...otherProps }) {
     const sizeType = {
-        'small': 'button__small',
-        'big': 'button__big',
+        small: 'button__small',
+        big: 'button__big',
     };
 
     return (

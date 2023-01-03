@@ -1,8 +1,8 @@
 import React from 'react';
 import './InfoList.scss';
 
-export function InfoList({ list }) {
-    function renderList(list = []) {
+export function InfoList({ list = [] }) {
+    function renderList(list) {
         const items = list.map((element, index) => {
             return (
                 <li
