@@ -3,11 +3,12 @@
 .button {
     box-sizing: border-box;
     height: 60px;
-    width: 160px;
+    max-width: 100%;
+    min-width: 160px;
     border: 1px solid #000;
     border-radius: 8px;
     padding: common.$gap;
-    font-size: 24px;
+    font-size: 22px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -16,20 +17,21 @@
     cursor: pointer;
     font-weight: 700;
     background-color: #fff;
-    transition: 0.3s opacity;
+    transition: 0.3s all;
 
     &.button__small {
         height: 40px;
-        width: 100px;
+        min-width: 100px;
         padding: #{common.$gap / 2};
-        font-size: 12px;
+        font-size: 14px;
     }
 
     &.button__big {
         height: 100px;
-        width: 300px;
+        min-width: 300px;
+        border-width: 2px;
         padding: common.$gap-big;
-        font-size: 48px;
+        font-size: 40px;
     }
 
     &:hover,

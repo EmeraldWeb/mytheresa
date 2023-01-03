@@ -6,17 +6,18 @@ import { Layout, Cell } from '../../components/layout';
 import { useQuery } from '../../hooks';
 import { Image } from '../../components/image';
 import { InfoList } from '../../components/infoList';
-import { Button } from '../../components/button';
+import { ButtonTheme } from '../../components/button';
 import url from '../../data/url.json';
 import './movie.scss';
 
 export function Movie() {
     const { movie } = useLoaderData();
     const { category } = useQuery();
+    const currentTheme = useTheme((state) => state.theme);
     const setTheme = useTheme((state) => state.setTheme);
 
     const setMovie = useMovieStore((state) => state.setMovie);
-    setMovie?.(movie);
+    setMovie(movie);
 
     if (!movie) {
         return (
@@ -38,13 +39,13 @@ export function Movie() {
         setTheme(category);
     }, [category]);
 
-    const catchPhrase = {
-        popular: 'Popular: ',
-        topRated: 'Top Rated: ',
-        upcoming: 'Upcoming: ',
-    };
-
     function movieTitle() {
+        const catchPhrase = {
+            popular: 'Popular: ',
+            topRated: 'Top Rated: ',
+            upcoming: 'Upcoming: ',
+        };
+
         const href = movie.homepage ?? `https://www.google.com/search?q=${movie.title.replace(' ', '+')}`;
 
         return (
@@ -79,6 +80,16 @@ export function Movie() {
         { title: 'Vote Count', text: movie.vote_count },
     ];
 
+    const buttonSize = {
+        popular: 'big',
+        topRated: 'small',
+        upcoming: '',
+    };
+
+    function handleCLick() {
+        alert(`This category and theme are "${currentTheme}"!`);
+    }
+
     return (
         <Layout
             headerContent={movieTitle()}
@@ -91,9 +102,13 @@ export function Movie() {
                     />
                 </Cell>
                 <Cell className={'movie-description'}>
-                    <Button className={'movie-description-button'} size={'small'} >FOOOBAR</Button>
-                    <Button className={'movie-description-button'} >FOOOBAR</Button>
-                    <Button className={'movie-description-button'} size={'big'} >FOOOBAR</Button>
+                    <ButtonTheme
+                        className={'movie-description-button'}
+                        size={buttonSize[currentTheme]}
+                        onClick={handleCLick}
+                    >
+                        {'Check'}
+                    </ButtonTheme>
 
                     <h2 className={'movie-description-headline'}>
                         {'Description'}
