@@ -35,6 +35,14 @@ each category has a unique theme presented on the movie page that belongs to tha
 
 <h3>About tech stack</h3>
 
+<h4>Wish list in Local Storage</h4>
+<p>
+    Task contains "There should be a wish list section"
+    I save wish list in local storage, 
+    but I don't understand "where is list section" in your proto layout, 
+    so I just show "wished" state of movies in carousels.
+</p>
+
 <h4>Testing with Jest-Enzyme</h4>
 <p>
     In this task Jest-Enzyme tech stack was implemented for testing, 

@@ -19,8 +19,8 @@ const defaultResponsive = {
 };
 
 const defaultParams = {
-    swipeable: true,
-    draggable: true,
+    swipeable: false,
+    draggable: false,
     showDots: false,
     partialVisible: true,
     ssr: true, // means to render carousel on server-side.

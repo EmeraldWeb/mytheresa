@@ -1,0 +1,11 @@
+.movieTitle {
+    color: var(--text-color);
+    font-weight: 700;
+    text-decoration: var(--sub-color) wavy underline;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: var(--sub-color);
+    }
+}
