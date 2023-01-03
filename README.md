@@ -16,20 +16,20 @@ each category has a unique theme presented on the movie page that belongs to tha
 
 <h3>Other commands you may find useful</h3>
 <span>(Full list in package.json "scripts")</span>
-- `npm run build` - only production build
-- `npm run lint` - code linting
-- `npm run test` - code testing
-- `npm run test:coverage` - test coverage
+* `npm run build` only production build
+* `npm run lint` code linting
+* `npm run test` code testing
+* `npm run test:coverage` test coverage
 
 <h3>Tech stack:</h3>
-- `Webpack` - for bundling
-- `React` - for building UI
-- `React Router` - for SPA navigation
-- `Zustand` - as lightweight store/state manager
-- `SASS/SCSS` - for styling
-- `Jest & Enzyme` - for testing
-- `Eslint & Stylelint` - for linting scripts and styles
-- `Babel & PostCSS` - for cross browser features
+* `Webpack` for bundling
+* `React` for building UI
+* `React Router` for SPA navigation
+* `Zustand` as lightweight store/state manager
+* `SASS/SCSS` for styling
+* `Jest & Enzyme` for testing
+* `Eslint & Stylelint` for linting scripts and styles
+* `Babel & PostCSS` for cross browser features
 
 <h3>About tech stack</h3>
 
